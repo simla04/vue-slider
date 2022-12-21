@@ -27,6 +27,11 @@ var app = new Vue ({
         ],
         indexImmagini: 0,
     },
+    // //si tratta di un ciclo di vita;
+    //  entra in gioco quando viene caricato l'applicativo #app
+    // mounted() {
+    //     this.immagineSuccessiva()
+    // },
     methods: {
         immagineSuccessiva() {
             // cambio indice in avanti
@@ -44,7 +49,9 @@ var app = new Vue ({
             } else {
                 this.indexImmagini--;
             }
+        },
+        attivaIntervallo() {
+            setIntervallo( ()=>{ this.immagineSuccessiva() }, 3000);
         }
-
     }
 })
